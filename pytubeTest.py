@@ -47,6 +47,4 @@ with closing(VideoSequence(latest_file)) as frames:
             faceFrame = frame.crop((left,top,right,bottom-height*0.3))
             faceFrame.save(faceFilename)
 
-command = "ffmpeg -i "+latest_file+" -ab 160k -ac 2 -ar 44100 -vn "+folderNumber+"/audio.wav"
-
-subprocess.call(command, shell=True)
+subprocess.run(["ffmpeg", "-i", latest_file, "-ab", "160k", "-ac", "2", "-ar", "44100", "-vn", folderNumber+"/audio.wav"])

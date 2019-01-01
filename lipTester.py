@@ -1,4 +1,5 @@
 import face_recognition
+from pathlib import Path
 from scipy import misc
 margin = 25
 maxWidth = 0
@@ -13,7 +14,8 @@ for i in range(0,131663):
     while len(strIndex) < 4:
         strIndex = "0"+strIndex
 
-    image = face_recognition.load_image_file("/media/rob/Ma Book1/CS 230/videoToVoice/3/origImages/frame"+strIndex+".jpg")
+    image_file = Path("3/origImages/frame"+strIndex+".jpg").resolve()
+    image = face_recognition.load_image_file(str(image_file))
     face_landmarks_list = face_recognition.face_landmarks(image)
 
     if(len(face_landmarks_list) >= 1):
@@ -41,5 +43,6 @@ for i in range(0,131663):
             maxWidth = xMax-xMin
 
         arr = misc.imread("3/origImages/frame"+strIndex+".jpg")
+        Path("3/mouthImages").mkdir(exist_ok=True)
         misc.imsave("3/mouthImages/frame"+strIndex+".jpg",arr[yMin-margin:yMax+margin,xMin-margin:xMax+margin])
         print("FINISHED IMAGE #"+str(i)+". Also, the maximum dimensions are "+str(maxWidth)+" x "+str(maxHeight))
