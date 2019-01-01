@@ -1,4 +1,17 @@
 # videoToVoice
+
+to install the dependencies using pip use requirements.txt file:
+
+```
+pip install -r requirements.txt
+```
+
+tensorflow might fail to install if you are using an incompatible version of python (python 3.7 as of the time of writing)
+in which case you might have to install it manually
+
+the scripts also depend on ffmpeg being installed for video and audio conversions
+
+
 These files take in a sequence of lip images, and predict the phonemes being said.
 
 pyTubeTest.py takes in a YouTube URL, downloads that video onto the computer, turns the video into an image sequence, tries to find faces in the images, and also extracts the audio from the video and saves that, too. Earlier, we tried to get pyTubeTest.py to also convert the audio into spectrograms with ARSS in the same code, but that just didn’t work because all the libraries required for the first steps only work in Ubuntu, and ARSS only works in Windows.

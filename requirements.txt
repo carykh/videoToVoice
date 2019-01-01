@@ -1,0 +1,5 @@
+VideoSequence
+face_recognition
+pytube
+scipy<=1.0.0
+tensorflow
