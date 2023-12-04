@@ -22,19 +22,3 @@ These files take in a sequence of lip images, and predict the phonemes being sai
 `phoframeTest.py` takes in a pre-trained model, and a sequence of silent images, and generates a text file predicting what phonemes should go along with said video.
 
 `rainingDataVisualizer.py`
-
-OUTDATED FILES
-
-`imageTest.py` was an experimental dumping ground of how to use PIL, which I don't think I ended up using.
-
-`dump.py` is where I tested helper functions such as the spectrogram-smoother, and video-frame-accesser.
-
-`faceReadTest.py` is where I tested the face recognition library installed from online. It ended up working, but it snaps to the nearest ~30 pixels for some reason, so we decided not to use it for now.
-
-`cropper.py` crops an image to only show the middle section (middle 40% horizontally and middle 50% vertically), although this is only used for explanation purposes (train.py has a cropping function within it.)
-
-`videoGetter.py` was a short script we used to extract all the images from a downloaded YouTube video when pyTubeTest.py crashed for some reason.
-
-`videoContinue.py` is videoGetter’s sequel and does the same thing, but starts in the middle.
-
-`trainingDataVisualizer.py` was my first attempt at making the pretty bar graphs that show the NN's prediction of phonemes at each frame. The new and improved version is the .pde file.
